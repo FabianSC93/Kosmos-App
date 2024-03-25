@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.mexingsoft.kosmosapp.R
 import com.mexingsoft.kosmosapp.domain.DataResultError
 
@@ -57,4 +58,10 @@ fun ErrorMessage(
 
         }
     }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun PrevErrorMessage(){
+    ErrorMessage(type = DataResultError.NoInternet)
 }

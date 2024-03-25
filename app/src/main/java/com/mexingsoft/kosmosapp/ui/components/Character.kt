@@ -21,6 +21,9 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.mexingsoft.kosmosapp.R
 
+/**
+ * Este componente contendrá al personaje de la serie, mostrando su información
+ */
 @Composable
 fun Character(
     image: String,
@@ -65,6 +68,10 @@ fun Character(
                 )
             }
 
+            /**
+             * Se valida si el botón a sido presionado para saber si mostrar la información adicional o no
+             */
+
             if(showDetail){
                 Column {
                     Text(modifier = Modifier.padding(4.dp), text = stringResource(id = R.string.status, status))
@@ -79,17 +86,20 @@ fun Character(
     }
 }
 
-@Preview(showBackground = true)
+/**
+ * Se agrega la preview para visualizar el componente
+ */
+@Preview(showSystemUi = true)
 @Composable
 fun PrevCharacter() {
     Character(
         image = "",
         name = "Ricky",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        status = "Vivo",
+        species = "Humano",
+        type = "Desconocido",
+        gender = "Hombre",
+        origin = "Tierra",
+        location = "Tierra"
     )
 }

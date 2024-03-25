@@ -37,6 +37,10 @@ import com.mexingsoft.kosmosapp.ui.components.Loading
 fun CharactersScreen(
     viewModel: CharactersViewModel = viewModel()
 ) {
+    /**
+     * Se crean las variables correspondientes para almacenar el valor obtenido del ViewModel
+     * Además de las variables que nos ayudaran a mostrar los dintintos componentes en caso de error, éxito o cargando
+     */
     var characters by remember {
         mutableStateOf(emptyList<CharacterModel>())
     }
@@ -46,6 +50,9 @@ fun CharactersScreen(
     var error by remember { mutableStateOf<DataResultError>(DataResultError.NoError) }
 
 
+    /**
+     * Se obtiene el listado del ViewModel y se cambian los valores de las variables
+     */
     viewModel.uiCharacterState.collectAsState().value.let {
         when (it) {
             is CharactersViewState.Error -> {
@@ -70,8 +77,10 @@ fun CharactersScreen(
         }
     }
 
-
-    Scaffold() {
+    /**
+     * Se analiza el resultado obtenido y en base a eso se muestra una pantalla o componente
+     */
+    Scaffold {
         when {
             isError -> {
                 ErrorMessage(type = error)
@@ -83,7 +92,9 @@ fun CharactersScreen(
 
             else -> {
                 Text(
-                    modifier = Modifier.fillMaxWidth().padding(16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
                     text = stringResource(id = R.string.ricky_and_morty),
                     fontSize = 30.sp,
                     fontWeight = FontWeight.SemiBold,
@@ -93,8 +104,9 @@ fun CharactersScreen(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(horizontal = 8.dp),
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    items(characters){
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    items(characters) {
                         Character(
                             image = it.image,
                             name = it.name,

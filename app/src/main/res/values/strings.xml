@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Kosmos App</string>
+
+    <!--    Descriptions-->
+    <string name="image_character">Imagén del personaje</string>
+
+    <!--    Buttons-->
+    <string name="show_detail">Ver Detalle</string>
+    <string name="hide_detail">Ocultar Detalle</string>
+
+    <!--    Text-->
+    <string name="status">Estado: %s</string>
+    <string name="species">Especie: %s</string>
+    <string name="type">Tipo: %s</string>
+    <string name="gender">Género: %s</string>
+    <string name="origin">Origen: %s</string>
+    <string name="location">Ubicación: %s</string>
+    <string name="ricky_and_morty">Ricky y Morty</string>
+    <string name="message_no_internet">Sin conexión a Internet</string>
+    <string name="message_empty_result">No se obtuvieron datos</string>
+
+
+</resources>

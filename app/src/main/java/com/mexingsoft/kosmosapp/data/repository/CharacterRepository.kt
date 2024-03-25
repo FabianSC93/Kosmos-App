@@ -3,7 +3,6 @@ package com.mexingsoft.kosmosapp.data.repository
 import android.content.Context
 import com.mexingsoft.kosmosapp.data.network.CharacterService
 import com.mexingsoft.kosmosapp.data.network.mapper.toCharacterModel
-import com.mexingsoft.kosmosapp.data.network.response.CharacterResponse
 import com.mexingsoft.kosmosapp.domain.DataResultError
 import com.mexingsoft.kosmosapp.domain.ResponseState
 import com.mexingsoft.kosmosapp.utils.Internet
